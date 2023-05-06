@@ -65,7 +65,7 @@
     <h2>Tabel Pelanggan</h2>
     <table>
         <tr>
-            <th>ID Pelanggan</th>
+            <th>ID Penjualan</th>
             <th>Nama Pengguna</th>
             <th>No Hp</th>
             <th>Tanggal Gabung</th>
