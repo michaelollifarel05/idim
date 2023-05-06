@@ -89,6 +89,10 @@
                     <td><?php echo $row['NoHp']; ?></td>
                     <td><?php echo $row['TanggalGabung']; ?></td>
                     <td><?php echo $row['idPenjualan']; ?></td>
+                    <td>
+                    <a href="ubah_akses.php?id=<?php echo $row['pelanggan']; ?>" class="button">Ubah</a>
+                    <a href="hapus_akses.php?id=<?php echo $row['pelanggan']; ?>" class="button" onclick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</a>
+                </td>
                 </tr>
             <?php endwhile; ?>
         <?php else: ?>
