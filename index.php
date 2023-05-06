@@ -9,26 +9,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['uname'];
     $password = $_POST['psw'];
 
-    // Membuat objek koneksi database
     $db = new Database();
     $conn = $db->connect();
 
-    // Query untuk memeriksa data login
     $query = "SELECT * FROM pengguna WHERE namaPengguna='$username' AND Password='$password'";
     $result = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($result) == 1) {
-        // Login berhasil, set session dan arahkan ke halaman dashboard
-        $_SESSION['username'] = $username;
+        $role = mysqli_fetch_array($check);
+        $_SESSION['id_role'] = $role['idAkses'];
         header('Location: controller/controller.php');
         exit();
     } else {
-        // Login gagal, tampilkan pesan kesalahan
         $error_message = "Username atau password salah.";
         echo $error_message;
     }
 
-    // Menutup koneksi database
     mysqli_close($conn);
 }
 ?>
