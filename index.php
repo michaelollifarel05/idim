@@ -117,9 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
   <form action="" method="POST">
-    <div class="imgcontainer">
-      <img src="avatar.png" alt="Avatar" class="avatar">
-    </div>
+
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
