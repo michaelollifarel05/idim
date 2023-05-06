@@ -36,7 +36,7 @@ while($row = mysqli_fetch_array($result)) {
 </head>
 <body>
     <h1>Ubah Pelanggan</h1>
-    <form name="update_pelanggan" method="post" action="ubah_pelanggan.php">
+    <form name="update_pelanggan" method="post" action="ubah_akses.php">
         <table>
             <tr>
                 <td>Nama Pelanggan</td>
