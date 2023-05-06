@@ -1,11 +1,4 @@
-<!-- <?php
-if (!isset($_SESSION['id_role'])) {
-    header('Location: ../index.php');
-    exit();
-}
- $_SESSION['id_role']
 
-?> -->
 
 <!DOCTYPE html>
 <html>
