@@ -32,7 +32,7 @@
     <h1>Tambah Pelanggan</h1>
     <form method="post" action="create_pelanggan_process.php ">
         <label>Id Pelanggan</label>
-        <input type="text" name="id_pelanggan" required>
+        <input type="text" name="id_penjualan" required>
         <label>Nama Pelanggan</label>
         <input type="text" name="nama_pelanggan" required>
         <label>No HP</label>
