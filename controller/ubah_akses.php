@@ -12,10 +12,10 @@ if(isset($_POST['update'])) {
     $idPenjualan = $_POST['idPenjualan'];
 
     // Memperbarui data Pelanggan berdasarkan ID Pelanggan
-    $result = mysqli_query($mysqli, "UPDATE pelanggan SET NamaPelanggan='$namaPelanggan', NoHp='$noHp', TanggalGabung='$tanggalGabung', idPenjualan='$idPenjualan' WHERE IdPelanggan=$idPelanggan");
+    $conn = mysqli_query($mysqli, "UPDATE pelanggan SET NamaPelanggan='$namaPelanggan', NoHp='$noHp', TanggalGabung='$tanggalGabung', idPenjualan='$idPenjualan' WHERE IdPelanggan=$idPelanggan");
 
     // Redirect kembali ke halaman utama setelah berhasil memperbarui data Pelanggan
-    header("Location: index.php");
+    header("Location: controller.php");
 }
 
 // Menampilkan data Pelanggan yang akan diubah berdasarkan ID Pelanggan
