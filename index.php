@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (mysqli_num_rows($result) == 1) {
         $role = mysqli_fetch_array($result);
-        $_SESSION['id_role'] = $role['idAkses'];
+        $_SESSION['id_role'] = $username;
         header('Location: controller/controller.php');
         exit();
     } else {
