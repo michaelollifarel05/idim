@@ -84,7 +84,7 @@
         <?php if (mysqli_num_rows($pelanggan) > 0): ?>
             <?php while ($row = mysqli_fetch_assoc($pelanggan)): ?>
                 <tr>
-                    <td><?php echo $row['idPelanggan']; ?></td>
+                    <td><?php echo $row['IdPelanggan']; ?></td>
                     <td><?php echo $row['NamaPelanggan']; ?></td>
                     <td><?php echo $row['NoHp']; ?></td>
                     <td><?php echo $row['TanggalGabung']; ?></td>
