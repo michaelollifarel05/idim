@@ -86,7 +86,7 @@
                 </tr>
             <?php endwhile; ?>
         <?php else: ?>
-            <button class="button button1">Green</button>
+            
             <tr>
                 <td colspan="5">Tidak ada data</td>
             </tr>
