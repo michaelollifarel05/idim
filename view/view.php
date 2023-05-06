@@ -86,11 +86,11 @@
                 </tr>
             <?php endwhile; ?>
         <?php else: ?>
-            <a href="tambah_pelanggan.php" class="button">Tambah pelanggan</a>
             <tr>
                 <td colspan="5">Tidak ada data</td>
             </tr>
         <?php endif; ?>
     </table>    
+    <a href="tambah_pelanggan.php" class="button">Tambah pelanggan</a>
 </body>
 </html>
