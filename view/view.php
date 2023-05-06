@@ -68,5 +68,31 @@
             </tr>
         <?php endif; ?>
     </table>
+
+    <h2>Tabel Pelanggan</h2>
+    <table>
+        <tr>
+            <th>ID Barang</th>
+            <th>Nama Barang</th>
+            <th>Keterangan</th>
+            <th>Satuan</th>
+            <th>ID Pengguna</th>
+        </tr>
+        <?php if (mysqli_num_rows($pelanggan) > 0): ?>
+            <?php while ($row = mysqli_fetch_assoc($pelanggan)): ?>
+                <tr>
+                    <td><?php echo $row['idPelanggan']; ?></td>
+                    <td><?php echo $row['NamaPelanggan']; ?></td>
+                    <td><?php echo $row['NoHp']; ?></td>
+                    <td><?php echo $row['TanggalGabung']; ?></td>
+                    <td><?php echo $row['idPenjualan']; ?></td>
+                </tr>
+            <?php endwhile; ?>
+        <?php else: ?>
+            <tr>
+                <td colspan="5">Tidak ada data</td>
+            </tr>
+        <?php endif; ?>
+    </table>    
 </body>
 </html>

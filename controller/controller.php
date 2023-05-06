@@ -7,10 +7,11 @@ class DashboardController
     {
         $hakAksesModel = new HakAkses();
         $barangModel = new Barang();
+        $pelangganModel = new Pelanggan;
 
         $akses = $hakAksesModel->getAllAkses();
         $barang = $barangModel->getAllBarang();
-
+        $pelanggan =  $pelangganM->getAllPelanggan();
         require_once '../view/view.php';
     }
 }
