@@ -1,13 +1,17 @@
 <?php
 session_start();
 
-// Koneksi ke database
+// Include file koneksi.php
 require_once 'koneksi.php';
 
 // Cek apakah pengguna sudah submit form login
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['uname'];
     $password = $_POST['psw'];
+
+    // Membuat objek koneksi database
+    $db = new Database();
+    $conn = $db->connect();
 
     // Query untuk memeriksa data login
     $query = "SELECT * FROM pengguna WHERE namaPengguna='$username' AND Password='$password'";
@@ -16,12 +20,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (mysqli_num_rows($result) == 1) {
         // Login berhasil, set session dan arahkan ke halaman dashboard
         $_SESSION['username'] = $username;
-        header('Location: controller/controller.php');
+        header('Location: dashboard.php');
         exit();
     } else {
         // Login gagal, tampilkan pesan kesalahan
         $error_message = "Username atau password salah.";
     }
+
+    // Menutup koneksi database
+    mysqli_close($conn);
 }
 ?>
 
