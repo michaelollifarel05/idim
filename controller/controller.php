@@ -11,7 +11,7 @@ class DashboardController
         $akses = $hakAksesModel->getAllAkses();
         $barang = $barangModel->getAllBarang();
 
-        require_once '../view.php';
+        require_once '../view/view.php';
     }
 }
 
