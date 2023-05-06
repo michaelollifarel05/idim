@@ -1,26 +1,20 @@
 <?php
+require_once '../model/model.php';
 
-    class Database{
-        private $host = "localhost";
-        private $username = "rppt";
-        private $password = "";
-        private $dbname = "k3";
-        public function connect()
-        {
-            $conn = mysqli_connect($this->host, $this->username, $this->password, $this->dbname);
+class DashboardController
+{
+    public function displayDashboard()
+    {
+        $hakAksesModel = new HakAkses();
+        $barangModel = new Barang();
 
-            if (!$conn) {
-                die("Koneksi gagal: " . mysqli_connect_error());
-            }
+        $akses = $hakAksesModel->getAllAkses();
+        $barang = $barangModel->getAllBarang();
 
-            return $conn;
-        }
+        require_once '../view.php';
     }
+}
 
-
-    class controller {
-
-
-    }
-
+$dashboardController = new DashboardController();
+$dashboardController->displayDashboard();
 ?>
