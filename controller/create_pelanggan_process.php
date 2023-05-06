@@ -1,6 +1,7 @@
 <?php
-include 'koneksi.php';
-
+include '../koneksi.php';
+$db = new Database();
+$conn = $db->connect();
 $nama_pelanggan = $_POST['nama_pelanggan'];
 $no_hp = $_POST['no_hp'];
 $tanggal_gabung = $_POST['tanggal_gabung'];
