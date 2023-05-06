@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
     $idAkses = $_GET['id'];
 
     // Hapus data akses dari tabel Akses berdasarkan idAkses
-    $query = "DELETE FROM pelanggan WHERE idAkses = '$idAkses'";
+    $query = "DELETE FROM pelanggan WHERE IdPelanggan = '$idAkses'";
     $result = mysqli_query($conn, $query);
 
     // Jika query berhasil dijalankan, redirect ke halaman dashboard
