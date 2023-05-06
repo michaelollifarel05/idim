@@ -36,7 +36,6 @@
                     <td><?php echo $row['Keterangan']; ?></td>
                     <td>
                         <a href="ubah_akses.php?id=<?php echo $row['idAkses']; ?>" class="button">Ubah</a>
-                        <a href="hapus_akses.php?id=<?php echo $row['idAkses']; ?>" class="button" onclick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</a>
                     </td>
                 </tr>
             <?php endwhile; ?>
