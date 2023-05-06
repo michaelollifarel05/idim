@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
     $keterangan = $_POST['keterangan'];
 
     // Update data pada database
-    $sql = "UPDATE akses SET NamaAkses = '$nama_akses', Keterangan = '$keterangan' WHERE idAkses = '$id'";
+    $sql = "UPDATE hakakses SET NamaAkses = '$nama_akses', Keterangan = '$keterangan' WHERE idAkses = '$id'";
     mysqli_query($conn, $sql);
 
     // Redirect ke halaman dashboard setelah berhasil mengubah data
