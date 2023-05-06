@@ -20,11 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (mysqli_num_rows($result) == 1) {
         // Login berhasil, set session dan arahkan ke halaman dashboard
         $_SESSION['username'] = $username;
-        header('Location: dashboard.php');
+        header('Location: controller/controller.php');
         exit();
     } else {
         // Login gagal, tampilkan pesan kesalahan
         $error_message = "Username atau password salah.";
+        echo $error_message;
     }
 
     // Menutup koneksi database
