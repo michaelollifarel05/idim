@@ -1,7 +1,8 @@
 <?php
 // Koneksi ke database
-$conn = mysqli_connect("localhost", "username", "password", "nama_database");
-
+require_once "../koneksi.php";
+$db = new Database();
+$conn = $db->connect();
 // Memeriksa apakah parameter ID telah diberikan
 if (!isset($_GET['id'])) {
     header("Location: dashboard.php");
