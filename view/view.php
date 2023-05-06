@@ -72,11 +72,11 @@
     <h2>Tabel Pelanggan</h2>
     <table>
         <tr>
-            <th>ID Barang</th>
-            <th>Nama Barang</th>
-            <th>Keterangan</th>
-            <th>Satuan</th>
-            <th>ID Pengguna</th>
+            <th>ID Pelanggan</th>
+            <th>Nama Pengguna</th>
+            <th>No Hp</th>
+            <th>Tanggal Gabung</th>
+            <th>ID Penjualan</th>
         </tr>
         <?php if (mysqli_num_rows($pelanggan) > 0): ?>
             <?php while ($row = mysqli_fetch_assoc($pelanggan)): ?>
