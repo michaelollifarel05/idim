@@ -18,7 +18,7 @@
         th {
             background-color: #f2f2f2;
         }   
-        .button {
+/*         .button {
             border: none;
             color: white;
             padding: 15px 32px;
@@ -29,7 +29,7 @@
             margin: 4px 2px;
             cursor: pointer;
         }
-        .button1 {background-color: #4CAF50;}
+        .button1 {background-color: #4CAF50;} */
 
     </style>
 </head>
