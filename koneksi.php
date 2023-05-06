@@ -1,8 +1,8 @@
 <?php
 class Database{
     private $host = "localhost";
-    private $username = "username";
-    private $password = "password";
+    private $username = "root";
+    private $password = "";
     private $dbname = "k3";
 
     public function connect()
