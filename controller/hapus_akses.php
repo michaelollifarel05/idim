@@ -14,7 +14,7 @@ if (isset($_GET['id'])) {
 
     // Jika query berhasil dijalankan, redirect ke halaman dashboard
     if ($result) {
-        header("Location: dashboard.php");
+        header("Location: controller.php");
     } else {
         echo "Gagal menghapus data akses";
     }
