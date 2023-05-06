@@ -2,7 +2,7 @@
 include '../koneksi.php';
 $db = new Database();
 $conn = $db->connect();
-$id_Penjualan = $_POST['id_Penjualan'];
+$id_penjualan = $_POST['id_penjualan'];
 $nama_pelanggan = $_POST['nama_pelanggan'];
 $no_hp = $_POST['no_hp'];
 $tanggal_gabung = $_POST['tanggal_gabung'];
