@@ -19,29 +19,7 @@
     </style>
 </head>
 <body>
-    <h1>Dashboard K3</h1>
-
-    <h2>Tabel Hak Akses</h2>
-    <table>
-        <tr>
-            <th>ID Akses</th>
-            <th>Nama Akses</th>
-            <th>Keterangan</th>
-        </tr>
-        <?php if (mysqli_num_rows($akses) > 0): ?>
-            <?php while ($row = mysqli_fetch_assoc($akses)): ?>
-                <tr>
-                    <td><?php echo $row['idAkses']; ?></td>
-                    <td><?php echo $row['NamaAkses']; ?></td>
-                    <td><?php echo $row['Keterangan']; ?></td>
-                </tr>
-            <?php endwhile; ?>
-        <?php else: ?>
-            <tr>
-                <td colspan="3">Tidak ada data</td>
-            </tr>
-        <?php endif; ?>
-    </table>
+    <h1>Dashboard Kel 3</h1>
 
     <h2>Tabel Barang</h2>
     <table>
