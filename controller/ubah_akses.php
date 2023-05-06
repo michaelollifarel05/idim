@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
     mysqli_query($conn, $sql);
 
     // Redirect ke halaman dashboard setelah berhasil mengubah data
-    header("Location: dashboard.php");
+    header("Location: controller.php");
 }
 
 // Mengambil data hak akses dari database berdasarkan ID
@@ -29,7 +29,7 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) == 0) {
     // Redirect ke halaman dashboard jika data tidak ditemukan
-    header("Location: dashboard.php");
+    header("Location: controller.php");
 }
 
 $row = mysqli_fetch_assoc($result);
