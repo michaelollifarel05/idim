@@ -9,9 +9,10 @@ if(isset($_POST['update'])) {
     $namaPelanggan = $_POST['namaPelanggan'];
     $noHp = $_POST['noHp'];
     $tanggalGabung = $_POST['tanggalGabung'];
+    $idPenjualan = $_POST['idPenjualan'];
 
     // Memperbarui data Pelanggan berdasarkan ID Pelanggan
-    $conn_1 = mysqli_query($conn, "UPDATE pelanggan SET NamaPelanggan='$namaPelanggan', NoHp='$noHp', TanggalGabung='$tanggalGabung' WHERE IdPelanggan=$idPelanggan");
+    $conn_1 = mysqli_query($conn, "UPDATE pelanggan SET NamaPelanggan='$namaPelanggan', NoHp='$noHp', TanggalGabung='$tanggalGabung', idPenjualan='$idPenjualan' WHERE IdPelanggan=$idPelanggan");
 
     // Redirect kembali ke halaman utama setelah berhasil memperbarui data Pelanggan
     header("Location: controller.php");
@@ -25,6 +26,7 @@ while($row = mysqli_fetch_array($result)) {
     $namaPelanggan = $row['NamaPelanggan'];
     $noHp = $row['NoHp'];
     $tanggalGabung = $row['TanggalGabung'];
+    $idPenjualan = $row['idPenjualan'];
 }
 ?>
 <!DOCTYPE html>
@@ -34,7 +36,7 @@ while($row = mysqli_fetch_array($result)) {
 </head>
 <body>
     <h1>Ubah Pelanggan</h1>
-    <form name="update_pelanggan" method="post" action="ubah_akses.php">
+    <form name="update_pelanggan" method="post" action="ubah_pelanggan.php">
         <table>
             <tr>
                 <td>Nama Pelanggan</td>
@@ -51,6 +53,10 @@ while($row = mysqli_fetch_array($result)) {
             <tr>
                 <td>ID Penjualan</td>
                 <td><input type="text" name="idPenjualan" value=<?php echo $idPenjualan;?>></td>
+            </tr>
+            <tr>
+                <td><input type="hidden" name="idPelanggan" value=<?php echo $_GET['id'];?>></td>
+                <td><input type="submit" name="update" value="Update"></td>
             </tr>
         </table>
     </form>
