@@ -30,7 +30,7 @@
 </head>
 <body>
     <h1>Tambah Pelanggan</h1>
-    <form method="post" action="proses_tambah_pelanggan.php">
+    <form method="post" action="create_pelanggan_process.php">
         <label>Nama Pelanggan</label>
         <input type="text" name="nama_pelanggan" required>
         <label>No HP</label>
