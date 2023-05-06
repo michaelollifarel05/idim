@@ -1,3 +1,11 @@
+<?php
+if (!isset($_SESSION['id_role'])) {
+    header('Location: ../index.php');
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
