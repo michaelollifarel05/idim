@@ -40,4 +40,24 @@ class Barang
         return $result;
     }
 }
+
+class Pelanggan
+{
+    private $db;
+
+    public function __construct()
+    {
+        $this->db = new Database();
+    }
+
+    public function getAllPelanggan()
+    {
+        $conn = $this->db->connect();
+        $sql = "SELECT * FROM pelanggan";
+        $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
+        
+        return $result;
+    }
+}
 ?>
