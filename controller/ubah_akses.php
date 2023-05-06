@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
 }
 
 // Mengambil data hak akses dari database berdasarkan ID
-$sql = "SELECT * FROM akses WHERE idAkses = '$id'";
+$sql = "SELECT * FROM hakakses WHERE idAkses = '$id'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) == 0) {
