@@ -1,6 +1,6 @@
 <?php
 // Panggil file koneksi.php agar bisa terhubung ke database
-require_once "koneksi.php";
+require_once "../koneksi.php";
 
 // Cek apakah parameter idAkses sudah dikirimkan
 if (isset($_GET['id'])) {
