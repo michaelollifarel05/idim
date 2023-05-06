@@ -20,7 +20,7 @@ if(isset($_POST['update'])) {
 
 // Menampilkan data Pelanggan yang akan diubah berdasarkan ID Pelanggan
 $idPelanggan = $_GET['id'];
-$result = mysqli_query($mysqli, "SELECT * FROM pelanggan WHERE IdPelanggan=$idPelanggan");
+$result = mysqli_query($conn, "SELECT * FROM pelanggan WHERE IdPelanggan=$idPelanggan");
 
 while($row = mysqli_fetch_array($result)) {
     $namaPelanggan = $row['NamaPelanggan'];
