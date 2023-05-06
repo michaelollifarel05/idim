@@ -3,54 +3,62 @@
 require_once "../koneksi.php";
 $db = new Database();
 $conn = $db->connect();
-// Memeriksa apakah parameter ID telah diberikan
-if (!isset($_GET['id'])) {
-    header("Location: dashboard.php");
+// Memeriksa apakah ID Pelanggan sudah diterima dari halaman sebelumnya
+if(isset($_POST['update'])) {
+    $idPelanggan = $_POST['idPelanggan'];
+    $namaPelanggan = $_POST['namaPelanggan'];
+    $noHp = $_POST['noHp'];
+    $tanggalGabung = $_POST['tanggalGabung'];
+    $idPenjualan = $_POST['idPenjualan'];
+
+    // Memperbarui data Pelanggan berdasarkan ID Pelanggan
+    $result = mysqli_query($mysqli, "UPDATE pelanggan SET NamaPelanggan='$namaPelanggan', NoHp='$noHp', TanggalGabung='$tanggalGabung', idPenjualan='$idPenjualan' WHERE IdPelanggan=$idPelanggan");
+
+    // Redirect kembali ke halaman utama setelah berhasil memperbarui data Pelanggan
+    header("Location: index.php");
 }
 
-$id = $_GET['id'];
+// Menampilkan data Pelanggan yang akan diubah berdasarkan ID Pelanggan
+$idPelanggan = $_GET['id'];
+$result = mysqli_query($mysqli, "SELECT * FROM pelanggan WHERE IdPelanggan=$idPelanggan");
 
-// Memeriksa apakah form telah disubmit
-if (isset($_POST['submit'])) {
-    $nama_akses = $_POST['nama_akses'];
-    $keterangan = $_POST['keterangan'];
-
-    // Update data pada database
-    $sql = "UPDATE hakakses SET NamaAkses = '$nama_akses', Keterangan = '$keterangan' WHERE idAkses = '$id'";
-    mysqli_query($conn, $sql);
-
-    // Redirect ke halaman dashboard setelah berhasil mengubah data
-    header("Location: controller.php");
+while($row = mysqli_fetch_array($result)) {
+    $namaPelanggan = $row['NamaPelanggan'];
+    $noHp = $row['NoHp'];
+    $tanggalGabung = $row['TanggalGabung'];
+    $idPenjualan = $row['idPenjualan'];
 }
-
-// Mengambil data hak akses dari database berdasarkan ID
-$sql = "SELECT * FROM hakakses WHERE idAkses = '$id'";
-$result = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($result) == 0) {
-    // Redirect ke halaman dashboard jika data tidak ditemukan
-    header("Location: controller.php");
-}
-
-$row = mysqli_fetch_assoc($result);
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ubah Hak Akses</title>
+    <title>Ubah Pelanggan</title>
 </head>
 <body>
-    <h1>Ubah Hak Akses</h1>
-
-    <form method="post">
-        <label>Nama Akses</label>
-        <input type="text" name="nama_akses" value="<?php echo $row['NamaAkses']; ?>">
-
-        <label>Keterangan</label>
-        <textarea name="keterangan"><?php echo $row['Keterangan']; ?></textarea>
-
-        <button type="submit" name="submit">Simpan</button>
+    <h1>Ubah Pelanggan</h1>
+    <form name="update_pelanggan" method="post" action="ubah_pelanggan.php">
+        <table>
+            <tr>
+                <td>Nama Pelanggan</td>
+                <td><input type="text" name="namaPelanggan" value=<?php echo $namaPelanggan;?>></td>
+            </tr>
+            <tr>
+                <td>No HP</td>
+                <td><input type="text" name="noHp" value=<?php echo $noHp;?>></td>
+            </tr>
+            <tr>
+                <td>Tanggal Gabung</td>
+                <td><input type="text" name="tanggalGabung" value=<?php echo $tanggalGabung;?>></td>
+            </tr>
+            <tr>
+                <td>ID Penjualan</td>
+                <td><input type="text" name="idPenjualan" value=<?php echo $idPenjualan;?>></td>
+            </tr>
+            <tr>
+                <td><input type="hidden" name="idPelanggan" value=<?php echo $_GET['id'];?>></td>
+                <td><input type="submit" name="update" value="Update"></td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>
